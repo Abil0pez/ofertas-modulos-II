@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta de Módulos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #222, #444);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .container {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #ff0000b3;
+            display: inline-block;
+            max-width: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ffcc00;
+            font-size: 38px;
+
+        }
+        .category-title {
+            font-size: 22px;
+            color: #ffcc00;
+            margin-top: 20px;
+        }
+        .offer-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .offer {
+            background: #ff0000;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .offer:hover {
+            transform: scale(1.1);
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 OFERTAS EXCLUSIVAS 🔥 
+            <p>MÓDULOS CON COLOCACIÓN</p>
+        </h1>
+
+
+        
+        <h2 class="category-title">📱 Samsung</h2>
+        <div class="offer-box" id="samsung-list"></div>
+        
+        <h2 class="category-title">📱 Motorola</h2>
+        <div class="offer-box" id="motorola-list"></div>
+    </div>
+
+    <script>
+        const samsung = [
+            { modelo: "A10", precio: "$26.000" },
+            { modelo: "A10S", precio: "$26.500" },
+            { modelo: "A11", precio: "$28.500" },
+            { modelo: "A02/A12", precio: "$27.500" },
+            { modelo: "A03 CORE", precio: "$28.000" },
+            { modelo: "A03S/A03/A02S", precio: "$27.500" },
+            { modelo: "A14 4G", precio: "$32.500" },
+            { modelo: "M12", precio: "$28.000" },
+            { modelo: "A01 CORE", precio: "$27.500" },
+            { modelo: "A01", precio: "$26.500" },
+            { modelo: "A04/A04S/A04E", precio: "$28.000" },
+            { modelo: "J4 PLUS/J6 PLUS", precio: "$27.500" },
+            { modelo: "J5 PRIME", precio: "$26.500" },
+            { modelo: "J7 PRIME", precio: "$27.500" },
+            { modelo: "J7 2015", precio: "$43.500" },
+            { modelo: "J7 NEO COPI", precio: "$30.900" },
+            { modelo: "J4 CORE", precio: "$27.500" },
+            { modelo: "J7 2016 COPI", precio: "$30.000" },
+            { modelo: "A21S", precio: "$29.500" },
+            { modelo: "A13", precio: "$29.000" }
+        ];
+
+        const motorola = [
+            { modelo: "E7/E71/E71 POWER", precio: "$27.500" },
+            { modelo: "E7 PLUS", precio: "$27.500" },
+            { modelo: "E6 PLUS", precio: "$27.500" },
+            { modelo: "E20", precio: "$30.000" },
+            { modelo: "G20", precio: "$28.500" },
+            { modelo: "G22/E32", precio: "$31.900" },
+            { modelo: "G8 PLAY", precio: "$36.000" },
+            { modelo: "G8 POWER LITE", precio: "$28.500" },
+            { modelo: "G51/G51S", precio: "$37.000" },
+            { modelo: "G60/G60S", precio: "$37.000" },
+            { modelo: "E22", precio: "$28.500" },
+            { modelo: "E40", precio: "$28.500" }
+        ];
+
+        function renderOffers(list, containerId) {
+            const container = document.getElementById(containerId);
+            list.forEach(oferta => {
+                const div = document.createElement("div");
+                div.classList.add("offer");
+                div.innerHTML = `${oferta.modelo} - ${oferta.precio}`;
+                container.appendChild(div);
+            });
+        }
+
+        renderOffers(samsung, "samsung-list");
+        renderOffers(motorola, "motorola-list");
+    </script>
+</body>
+</html>
